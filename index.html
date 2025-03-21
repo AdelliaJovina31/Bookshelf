@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bookshelf Apps</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="head_bar">
+    <div class="sidebar_brand">
+      <img src="assets/bookshelf_icon.jpg" alt="Bookshelf Apps" class="sidebar_brand_icon">
+      <p>Bookshelf Apps</p>
+    </div>
+    <nav>
+        <ul class="nav_list">
+          <li><a href="#home"  class="nav_link active">Home</a></li>
+          <li><a href="#tambah_buku" class="nav_link">Tambah Buku</a></li>
+          <li><a href="#belum_selesai" class="nav_link">Belum selesai</a></li>
+          <li><a href="#selesai" class="nav_link">Selesai</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <section class="search_section" id="home">
+      <div class="home_content">
+        <img src="assets/bookshelf.jpg" class="home_image">
+        <div class="picture_caption">
+          <h1>Selamat datang di BookShelf Apps!</h1>
+          <p>Atur buku jadi lebih mudah</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="input_section" id="tambah_buku">
+      <h2>Tambah Buku Baru</h2>
+      <form id="input_buku">
+        <div class="input">
+          <label for="input_judul_buku">Judul</label>
+          <input id="input_judul_buku" type="text" required>
+        </div>
+        <div class="input">
+          <label for="input_penulis_buku">Penulis</label>
+          <input id="input_penulis_buku" type="text" required>
+        </div>
+        <div class="input">
+          <label for="input_tahun">Tahun</label>
+          <input id="input_tahun" type="number" required>
+        </div>
+        <div class="input_inline">
+          <label for="input_isComplete">Selesai dibaca</label>
+          <input id="input_isComplete" type="checkbox">
+        </div>
+        <button id="submit_buku" type="submit">Masukkan Buku ke rak <span id="boldText">Belum Selesai Dibaca</span></button>
+      </form>
+    </section>
+
+    <section class="search_section">
+      <form id="searchBook">
+        <input id="searchBookTitle" type="text" placeholder="Judul Buku">
+        <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+      </form>
+    </section>
+
+    <section class="book_shelf" id="belum_selesai">
+      <h2>Belum selesai dibaca</h2>
+      
+      <div id="list_buku_uncompleted" class="book_list"></div>
+    </section>
+
+    <section class="book_shelf" id="selesai">
+      <h2>Selesai dibaca</h2>
+      
+      <div id="list_buku_completed" class="book_list"></div>
+    </section>
+
+    <div class="edit-modal" id="edit_modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Edit Data Buku</h2>
+          <button class="modal-close" id="close_modal">&times;</button>
+        </div>
+        <form id="edit_buku">
+          <div class="input">
+            <label for="edit_judul_buku">Judul</label>
+            <input id="edit_judul_buku" type="text">
+          </div>
+          <div class="input">
+            <label for="edit_penulis_buku">Penulis</label>
+            <input id="edit_penulis_buku" type="text">
+          </div>
+          <div class="input">
+            <label for="edit_tahun">Tahun</label>
+            <input id="edit_tahun" type="number">
+          </div>
+
+          <button id="edit_buku_button" type="submit">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script defer src="script.js"></script>
+
+</body>
+</html>
